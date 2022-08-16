@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping blogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+</head>
+<style>
+* {
+margin: 0;
+padding: 0;
+font-family: 'Roboto', sans-serif;
+font-size: min(1vw,1rem);
+box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 100vw;
+    /* max-width: 1920px; */
+    background-image: linear-gradient(to left bottom, #02ffff, #00e5ff, #00c0ff, #8589ff, #eb12d8);
+    background-repeat: no-repeat;
+    background-size: 100vw 100rem;
+    height: 59.7rem;
+    max-height: 80rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.container > .card {
+	width: 23vw;
+	max-width: 30rem;
+	background-color: #fff;
+	margin: min(3vw,4rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    text-align: center;
+    border-radius: 13px;
+}
+.container > .card > .image {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.container > .card > .image > .guiter-image > img {
+	width: 12vw;
+    max-width: 15rem;
+}
+.card > .content {
+    width: 23vw;
+	max-width: 30rem;
+    display: block;
+    padding: min(2vw,3rem);
+    background-color: aliceblue;
+}
+
+
+.card > .content > p::selection {
+    width: 23vw;
+	max-width: 30rem;
+    background-color: rgb(255, 254, 192);
+}
+.card h1 {
+    font-size: min(1.5vw,2rem);
+    width: 100%;
+}
+.card h1::selection {
+    font-size: min(1.5vw,2rem);
+    background-color: rgb(255, 254, 192);
+}
+.container > .card > .image > img + p  {
+    text-align: left;
+}
+.content {
+    width: 100%;
+    background-color: beige;
+    padding: min(1vw,1rem);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.image > .content > .head > .h1 > .content {
+    display: none;
+	background-color: azure;
+	margin: 0 0 min(2vw,2rem) 0;
+}
+.image > .content > .head > .h1:hover > .content {
+    display: block;
+	background-color: azure;
+	margin: 0 0 min(2vw,2rem) 0;
+}
+
+.image > .content:hover > .head {
+    display: block;
+	background-color: azure;
+	margin: 0 0 min(2vw,2rem) 0;
+}
+.content > p {
+	margin-bottom: min(2vw,1rem);
+}
+.more-info > .h3 + .para > p {
+    line-height: min(2vw,2rem);
+}
+.h-1 {
+    width: 100%;
+    background-color: aquamarine;
+    border: 2px solid black;
+    
+}
+.h-1:hover {
+    width: 100%;
+    background-color: rgba(238, 234, 5,0.5);
+    cursor: pointer;
+}
+
+.head {
+    width: 100%;
+}
+.more-info {
+    text-align: left;
+}
+.more-info > .h3 h3 {
+    text-align: left;
+    font-size: min(1.1vw,1.5rem);
+}
+.image img {
+    transition: all 1s ease-in-out 1s;
+    width:
+}
+.image img:hover {
+    transform: scale(2);
+}
+.guiter-image {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.button {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+form > input[type="submit"] {
+	width: 20vw;
+	max-width: 24rem;
+    padding: min(0.5vw,0.2rem);
+    font-size: min(1vw,2rem);
+    color: #fff;
+    background-color: #560585;
+    cursor: pointer;
+    border-radius: 9px;
+    border: 2px solid black;
+}
+form > input[type="submit"]:hover {
+	width: 20vw;
+	max-width: 24rem;
+	padding: min(0.5vw,0.2rem);
+	font-size: min(1vw,2rem);
+	color: #fff;
+	background-color: #850585;
+	cursor: pointer;
+	border-radius: 9px;
+	border: 2px solid black;
+}
+</style>
+<style>
+/*---------MEDIA QUARIES START----------------*/
+
+/*---------SMALL TO MEDIUM DEVICES------*/
+@media (min-width: 50px) and (max-width: 240px) {
+    
+    body {
+        background-image: none;
+        background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    }
+.container {
+	width: 100vw;
+	max-width: 1920px;
+	background-image: none;
+	height: 305rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-height: 283rem;
+}
+.container > .card {
+	width: 80vw;
+	max-width: 60rem;
+	border-radius: 0px;
+    border: 1px solid black;
+}
+.container > .card > .image > .guiter-image > img {
+	width: 36vw;
+	max-width: 65rem;
+}
+.card h1 {
+	font-size: min(4.9vw,6rem);
+}
+}
+@media (min-width: 241px) and (max-width: 600px) {
+    * {
+	font-size: min(2.1vw,1rem);
+}
+body {
+        background-image: none;
+        background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    }
+
+.more-info > .h3 h3 {
+	text-align: left;
+	font-size: min(1.9vw,1.5rem);
+}
+.container {
+	width: 100vw;
+	max-width: 1920px;
+	background-image: none;
+	height: 258.7vw;
+	max-height: 129rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.container > .card {
+	width: 80vw;
+	max-width: 60rem;
+	border-radius: 0px;
+    border: 1px solid black;
+}
+.container > .card > .image > .guiter-image > img {
+	width: 48vw;
+	max-width: 15rem;
+}
+.more-info > .h3 + .para > p {
+	line-height: min(3vw,2rem);
+}
+.card h1 {
+	font-size: min(3.5vw,3rem);
+	width: 100%;
+}
+form > input[type="submit"] {
+	font-size: min(1.9vw,2rem);
+}
+form > input[type="submit"]:hover {
+	font-size: min(1.9vw,2rem);
+}
+}
+/*---------SMALL TO MEDIUM DEVICES------*/
+
+/*---------MEDIA QUARIES END------------------*/
+</style>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Yamaha FX280 TBS (Brown Sunburst) Electro Acoustic Guitar</h1>
+            <div class="image">
+                <div class="guiter-image">
+                    <img src=
+                    "https://yamaha.ndcdn.in/media/catalog/product/cache/9e0f31af0cdc06df956748b13dabad87/f/x/fx280_tbs_a_0001.jpg" 
+                    alt="png">
+                </div>
+                <div class="content">
+                    <p><b>Price:</b>₹10,990</p>
+                    <div class="head">
+                        <div class="h1">
+                            <div class="h-1">
+                                <h1>Check out for more info</h1>
+                            </div>
+                            <div class="content">
+                                <div class="more-info">
+                                    <div class="h3">
+                                        <h3>Yamaha FX280 TBS (Brown Sunburst) Electro Acoustic Guitar</h3>
+                                    </div>
+                                    <div class="para">
+                                        <p>FX280 is the perfect acoustic-electric Guitar for beginners. 
+                                            This model provides great Yamaha quality 
+                                            and the natural plugged-in sound which delivers the body resonance. 
+                                            It is ideal for both home and stage performances.  
+                                            <div class="button">
+                                                <form action="#">
+                                                    <input type="submit" name="Add to Cart" value="Add to Cart" id="Add-to-Cart">
+                                                </form>
+                                            </div>
+                                        </p>
+                                    </div>    
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h1>Yamaha FX280 Natural Electro Acoustic Guitar</h1>
+            <div class="image">
+                <div class="guiter-image">
+                    <img src=
+                    "https://yamaha.ndcdn.in/media/catalog/product/cache/899ce1975ffcf53b80ac01574e434284/f/x/fx280-2-9may.jpg "
+                    alt="png">
+                </div>
+                <div class="content">
+                    <p><b>Price:</b>₹10,990</p>
+                    <div class="head">
+                        <div class="h1">
+                            <div class="h-1">
+                                <h1>Check out for more info</h1>
+                            </div>
+                            <div class="content">
+                                <div class="more-info">
+                                    <div class="h3">
+                                        <h3>Yamaha FX280 Natural Electro Acoustic Guitar</h3>
+                                    </div>
+                                    <div class="para">
+                                        <p>FX280 is the perfect acoustic-electric Guitar for beginners. 
+                                            This model provides great Yamaha quality and the natural 
+                                            plugged-in sound which delivers the body resonance. 
+                                            It is ideal for both home and stage performances. 
+                                            <div class="button">
+                                                <form action="#">
+                                                    <input type="submit" name="Add to Cart" value="Add to Cart" id="Add-to-Cart">
+                                                </form>
+                                            </div>
+                                        </p>
+                                    </div>    
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h1>Yamaha F280 TBS (Brown Sunburst) Acoustic Guitar</h1>
+            <div class="image">
+                <div class="guiter-image">
+                    <img src=
+                    "https://yamaha.ndcdn.in/media/catalog/product/cache/899ce1975ffcf53b80ac01574e434284/f/2/f280_1.jpg" 
+                    alt="png">
+                </div>
+                <div class="content">
+                    <p><b>Price:</b>₹7,490</p>
+                    <div class="head">
+                        <div class="h1">
+                            <div class="h-1">
+                                <h1>Check out for more info</h1>
+                            </div>
+                            <div class="content">
+                                <div class="more-info">
+                                    <div class="h3">
+                                        <h3>Yamaha F280 TBS (Brown Sunburst) Acoustic Guitar</h3>
+                                    </div>
+                                    <div class="para">
+                                        <p>An exclusive model for India with Affordable Price
+                                            <br>
+                                            1.Comfortable playability for beginners
+                                            <br>
+                                            2.High durability and stability proven by Yamaha's quality standard
+                                            Made in Yamaha Music India factory.</p>
+                                            <div class="button">
+                                                <form action="#">
+                                                    <input type="submit" name="Add to Cart" value="Add to Cart" id="Add-to-Cart">
+                                                </form>
+                                            </div>
+                                    </div>    
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>   
+    </div>
+</body>
+</html>
